@@ -1,5 +1,5 @@
 import os
-clear = lambda: os.system('cls')
+clear = lambda: os.system('clear')
 
 option = 0
 cntContact = 0
@@ -58,24 +58,23 @@ def contactList():
         back()
         
 def validNumber(phone_number):
-    if len(phone_number) < 10 and len(phone_number) > 12:
+    if len(phone_number) < 10 or len(phone_number) > 12:
+        print("masuk")
         return False
     for i in range(len(phone_number)):
-        if phone_number[i].isalnum():
+        if phone_number[i].isalpha():
             return False
     return True
 
-def contactAdd():
+def addContact():
     clear()
     print("Tambah Kontak")
     print("-"*30)
     print()
     Name = input("Nama: ")
     Telp = input("No. Telepon: ")
-    print(validNumber(Telp))
     while validNumber(Telp) == False:
         print("No telpon tidak Valid, no telpon harus berupa numeric dan panjang angka adalah 10 - 12 angka\n"+"-"*100)
-        Name = input("Nama: ")
         Telp = input("No. Telepon: ")
     else:
         global cntContact
@@ -101,7 +100,7 @@ def main():
     if(option == 1):
         contactList()
     elif(option == 2):
-        contactAdd()
+        addContact()
     elif(option == 3):
         confimation()
     else:
