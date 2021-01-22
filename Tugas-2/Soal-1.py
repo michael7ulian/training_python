@@ -87,13 +87,6 @@ def contactAdd():
         print()
         print("Contact successfully added!")
         back()
-    
-    
-
-def chooseMenu(i):
-    switcher={
-        1: contactList()
-    }
 
 def main():
     clear()
