@@ -1,10 +1,8 @@
 import os
 clear = lambda: os.system('clear')
-
 option = 0
-cntContact = 0
+i = 0
 contacts = {}
-
 
 def confimation():
     print("\n"*2)
@@ -41,16 +39,13 @@ def home():
 def contactList():
     clear()
     if(len(contacts) > 0 ):
-        print("Daftar Kontak")
+        print("Daftar Kontak:")
         print("-"*30)
         print()
         for a, b in contacts.items():
-            for x, y in b.items():
-                if(x == "Name"):
-                    print(f"Nama: {y}")
-                else:
-                     print(f"No. Telepon: {y}")
-        back()
+            for x in b:
+                print(x, b[x], sep=': ')
+            back()
     else:
         print("-"*30)
         print("Anda belum memiliki list Kontak")
@@ -59,7 +54,6 @@ def contactList():
         
 def validNumber(phone_number):
     if len(phone_number) < 10 or len(phone_number) > 12:
-        print("masuk")
         return False
     for i in range(len(phone_number)):
         if phone_number[i].isalpha():
@@ -72,16 +66,16 @@ def addContact():
     print("-"*30)
     print()
     Name = input("Nama: ")
-    Telp = input("No. Telepon: ")
+    Telp = input("No Telepon: ")
     while validNumber(Telp) == False:
         print("No telpon tidak Valid, no telpon harus berupa numeric dan panjang angka adalah 10 - 12 angka\n"+"-"*100)
         Telp = input("No. Telepon: ")
     else:
-        global cntContact
-        cntContact += 1
-        contacts[cntContact] = {
-            "Name": Name,
-            "Telp": Telp
+        global i
+        i += 1
+        contacts[i] = {
+            "Nama": Name,
+            "No Telepon": Telp
         }
         print()
         print("Contact successfully added!")
