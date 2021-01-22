@@ -48,7 +48,7 @@ def contactList():
         print("-"*30)
         print("Anda belum memiliki list Kontak")
         print("-"*30)
-        back()
+        start()
         
 def validNumber(phone_number):
     if len(phone_number) < 10 or len(phone_number) > 12:
@@ -80,7 +80,6 @@ def addContact():
         back()
 
 def start():
-    clear()
     home()
     while True:
         try:
