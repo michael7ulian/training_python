@@ -13,7 +13,6 @@ def confimation():
         main()
     else:
         clear()
-        print("\n"*2)
         print("Program selesai, sampai jumpa!")
         return
 
@@ -26,7 +25,6 @@ def back():
         main()
     else:
         clear()
-        print("\n"*2)
         print("Program selesai, sampai jumpa!\n")
         return
 
@@ -45,7 +43,7 @@ def contactList():
         for a, b in contacts.items():
             for x in b:
                 print(x, b[x], sep=': ')
-            back()
+        back()
     else:
         print("-"*30)
         print("Anda belum memiliki list Kontak")
@@ -55,8 +53,8 @@ def contactList():
 def validNumber(phone_number):
     if len(phone_number) < 10 or len(phone_number) > 12:
         return False
-    for i in range(len(phone_number)):
-        if phone_number[i].isalpha():
+    for n in range(len(phone_number)):
+        if phone_number[n].isalpha():
             return False
     return True
 
@@ -69,7 +67,7 @@ def addContact():
     Telp = input("No Telepon: ")
     while validNumber(Telp) == False:
         print("No telpon tidak Valid, no telpon harus berupa numeric dan panjang angka adalah 10 - 12 angka\n"+"-"*100)
-        Telp = input("No. Telepon: ")
+        Telp = input("No Telepon: ")
     else:
         global i
         i += 1
