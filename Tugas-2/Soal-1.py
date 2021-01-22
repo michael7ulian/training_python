@@ -10,7 +10,7 @@ def confimation():
     while confirm.lower() != "y" and confirm.lower() != "n":
         confirm = input("Anda yakin ingin keluar?(y/n) ")
     if(confirm.lower() == "n"):
-        main()
+        start()
     else:
         clear()
         print("Program selesai, sampai jumpa!")
@@ -22,7 +22,7 @@ def back():
     while backToHome.lower() != "y" and backToHome.lower() != "n":
         backToHome = input("Kembali ke Menu?(y/n) ")
     if(backToHome.lower() == "y"):
-        main()
+        start()
     else:
         clear()
         print("Program selesai, sampai jumpa!\n")
@@ -60,7 +60,7 @@ def validNumber(phone_number):
 
 def addContact():
     clear()
-    print("Tambah Kontak")
+    print("Tambah Kontak: ")
     print("-"*30)
     print()
     Name = input("Nama: ")
@@ -79,7 +79,7 @@ def addContact():
         print("Contact successfully added!")
         back()
 
-def main():
+def start():
     clear()
     home()
     while True:
@@ -100,4 +100,4 @@ def main():
         print("Menu tidak tersedia")
         back()
 
-main()
+start()
