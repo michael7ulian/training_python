@@ -1,3 +1,6 @@
+import os
+clear = lambda: os.system('clear')
+
 class biodata:
     def __init__(self):
         nama = input("nama anda: ")
@@ -8,9 +11,11 @@ class biodata:
         self.alamat = alamat
         
     def bio(self):
+        clear()
+        print("biodata anda:")
         print("nama: ",self.name)
         print("alamat: ",self.alamat)
         print("umur: ", self.age)
 
 p1 = biodata()
-p1.bio
+p1.bio()
